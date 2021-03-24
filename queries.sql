@@ -1,4 +1,8 @@
 ## Part 1: Test it with SQL
+id = NULL;
+employer = NULL;
+name = NULL;
+skills = NULL;
 
 ## Part 2: Test it with SQL
 
