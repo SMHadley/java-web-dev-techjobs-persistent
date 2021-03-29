@@ -1,17 +1,25 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Skill extends AbstractEntity {
 
     @NotNull
-    private String skillDescription;
+    private String description;
+
+    @ManyToMany(mappedBy="skills")
+    private List<Job> jobs = new ArrayList<>();
 
     public Skill(){}
 
-    public String getSkillDescription() { return skillDescription; }
+    public String getDescription() { return description; }
 
-    public void setSkillDescription(String skillDescription) { this.skillDescription = skillDescription; }
+    public void setDescription(String description) { this.description = description; }
+
+    public List<Job> getJobs() { return jobs; }
 }
