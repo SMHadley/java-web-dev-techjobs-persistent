@@ -1,15 +1,20 @@
 ## Part 1: Test it with SQL
-
-CREATE TABLE job {
-id INTEGER PRIMARY KEY AUTO_INCREMENT;
-employer VARCHAR(75);
-name VARCHAR(75);
-skills VARCHAR(255);
-};
+SELECT DATA_TYPE from INFORMATION_SCHEMA.COLUMNS where
+table_schema = "techjobs" and table_name = "job";
 
 ## Part 2: Test it with SQL
-
+ SELECT name
+ FROM employer
+ WHERE location = "St. Louis";
 
 ## Part 3: Test it with SQL
+DROP TABLE job;
 
 ## Part 4: Test it with SQL
+SELECT name, description
+FROM skill
+INNER JOIN job_skills ON skill.id = job_skills.skills_id
+WHERE job_skills.jobs_id IS NOT NULL
+ORDER BY name ASC;
+
+
